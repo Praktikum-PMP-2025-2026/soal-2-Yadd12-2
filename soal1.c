@@ -72,7 +72,7 @@ int main()
 
     for(i=0;i<=jumlahLevel;i++)
     {
-        printf("\nLEVEL %d:", i);
+        printf("LEVEL %d:", i);
         if(i%2==0)
         {
             for(j=lastIndeks;j<lastIndeks+pow(2, i);j++)
@@ -88,6 +88,11 @@ int main()
                 printf(" %d",familyNode[j]->Nomor);
             }
             lastIndeks = pow(2, i)+1;
+        }
+
+        if(i!=jumlahLevel)
+        {
+            printf("\n");
         }
     }
 }
