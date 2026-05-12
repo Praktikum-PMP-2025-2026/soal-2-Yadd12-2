@@ -56,6 +56,14 @@ Node *tambahNode(int tempInput, int N, int i, Node *familyNode[])
     {
         nodeBaru->parent = familyNode[2];
     }
+    else if(i>6 && i<=8)
+    {
+        nodeBaru->parent = familyNode[3];
+    }
+    else if(i>8 && i<=10)
+    {
+        nodeBaru->parent = familyNode[4];
+    }
     return nodeBaru;
 }
 
@@ -97,16 +105,33 @@ int main()
             for(j=lastIndeks;j<lastIndeks+pangkat(i);j++)
             {
                 printf(" %d",familyNode[j]->Nomor);
+                if(j>=N)
+                {
+                    return 0;
+                }
             }
+            // printf("jjj %d", j);
             lastIndeks = j;
         }
         else if(i%2==1)
         {
-            for(j=pangkat(i);j>=lastIndeks;j--)
+            if(pangkat(i)<N)
             {
-                printf(" %d",familyNode[j]->Nomor);
+                for(j=pangkat(i);j>=lastIndeks;j--)
+                {
+                    printf(" %d",familyNode[j]->Nomor);
+                }
+                lastIndeks = pangkat(i)+1;
             }
-            lastIndeks = pangkat(i)+1;
+            else if(pangkat(i)>=N)
+            {
+                for(j=N-1;j>=lastIndeks;j--)
+                {
+                    // printf("jjj %d", j);
+                    printf(" %d",familyNode[j]->Nomor);
+                }
+                return 0;
+            }
         }
 
         // if(i!=jumlahLevel)
@@ -114,6 +139,8 @@ int main()
         //     printf("\n");
         // }
     }
+
+    return 0;
 }
 
 // Referensi
