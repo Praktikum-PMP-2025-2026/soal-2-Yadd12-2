@@ -2,7 +2,7 @@
  *   Modul               : 5 - Foundation of Algorithm
  *   Hari dan Tanggal    : Selasa, 12 Mei 2026
  *   Nama (NIM)          : Fayyadh Ramadhan (13224077)
- *   Nama File           : soal1.c
+ *   Nama File           : soal2.c
  *   Deskripsi           : 
  * 
  */
@@ -16,6 +16,25 @@ typedef struct Node{
     int Nomor;
     struct Node *parent;
 } Node;
+
+int pangkat(int eksponen)
+{
+    int jumlah=1, i=0;
+    
+    if(eksponen==0)
+    {
+        return 1;
+    }
+    else
+    {
+        while(i<=eksponen)
+        {
+            jumlah*=2;
+            i+=1;
+        }
+        return jumlah;
+    }
+}
 
 Node *tambahNode(int tempInput, int N, int i, Node *familyNode[])
 {
@@ -72,7 +91,7 @@ int main()
 
     for(i=0;i<=jumlahLevel;i++)
     {
-        printf("LEVEL %d:", i);
+        printf("\nLEVEL %d:", i);
         if(i%2==0)
         {
             for(j=lastIndeks;j<lastIndeks+pow(2, i);j++)
@@ -90,10 +109,10 @@ int main()
             lastIndeks = pow(2, i)+1;
         }
 
-        if(i!=jumlahLevel)
-        {
-            printf("\n");
-        }
+        // if(i!=jumlahLevel)
+        // {
+        //     printf("\n");
+        // }
     }
 }
 
