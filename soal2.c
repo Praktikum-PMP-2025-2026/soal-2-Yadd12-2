@@ -27,7 +27,7 @@ int pangkat(int eksponen)
     }
     else
     {
-        while(i<=eksponen)
+        while(i<eksponen)
         {
             jumlah*=2;
             i+=1;
@@ -64,7 +64,7 @@ int hitungLevel(int N)
     int tempPow=0, tempTotal=0;
     for(int i=0;i<N;i++)
     {
-        tempPow = pow(2, i);
+        tempPow = pangkat(i);
         tempTotal += tempPow;
         if(N-tempTotal <= 0)
         {
@@ -94,7 +94,7 @@ int main()
         printf("\nLEVEL %d:", i);
         if(i%2==0)
         {
-            for(j=lastIndeks;j<lastIndeks+pow(2, i);j++)
+            for(j=lastIndeks;j<lastIndeks+pangkat(i);j++)
             {
                 printf(" %d",familyNode[j]->Nomor);
             }
@@ -102,11 +102,11 @@ int main()
         }
         else if(i%2==1)
         {
-            for(j=pow(2, i);j>=lastIndeks;j--)
+            for(j=pangkat(i);j>=lastIndeks;j--)
             {
                 printf(" %d",familyNode[j]->Nomor);
             }
-            lastIndeks = pow(2, i)+1;
+            lastIndeks = pangkat(i)+1;
         }
 
         // if(i!=jumlahLevel)
