@@ -104,11 +104,11 @@ int main()
         {
             for(j=lastIndeks;j<lastIndeks+pangkat(i);j++)
             {
-                printf(" %d",familyNode[j]->Nomor);
                 if(j>=N)
                 {
                     return 0;
                 }
+                printf(" %d",familyNode[j]->Nomor);
             }
             // printf("jjj %d", j);
             lastIndeks = j;
