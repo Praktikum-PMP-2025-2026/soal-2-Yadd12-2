@@ -3,7 +3,7 @@
  *   Hari dan Tanggal    : Selasa, 12 Mei 2026
  *   Nama (NIM)          : Fayyadh Ramadhan (13224077)
  *   Nama File           : soal2.c
- *   Deskripsi           : 
+ *   Deskripsi           : Mencetak node secara zigzag sejumlah input user, dimana level genap dimulai dari kiri dan level ganjil dimulai dari kanan.
  * 
  */
 
